@@ -61,3 +61,25 @@
     border-radius: 4px;
     color: black;
 }
+
+#decimal{
+    background-color: teal;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid teal;
+    border-radius: 4px;
+    color: black;
+}
+
+#equals{
+    background-color: orange;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid orange;
+    border-radius: 4px;
+    color: black;
+}
