@@ -52,6 +52,7 @@ function addToDisplay(e){
         display.textContent = '';
     }
 
+    display.textContent = displayValue;
     displayValue += this.textContent;
     display.textContent += this.textContent;
 }
@@ -71,7 +72,6 @@ function saveValue(e){
 
     display.textContent = displayValue;
     displayValue = '';
-    display.textContent = displayValue;
 }
 
 function allClear(){
