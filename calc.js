@@ -2,21 +2,24 @@ function add(a, b){
     if(b === undefined){
         b = a;
     }
-    display.textContent = parseFloat(a) + parseFloat(b);
+    finalValue = parseFloat(a) + parseFloat(b);
+    display.textContent = finalValue;
 }
 
 function subtract(a, b){
     if(b === undefined){
         b = a;
     }
-    display.textContent = (a - b);
+    finalValue = (a - b);
+    display.textContent = finalValue;
 }
 
 function multiply(a, b){
     if(b === undefined){
         b = a;
     }
-    display.textContent = a * b;
+    finalValue = a * b;
+    display.textContent = finalValue;
 }
 
 function divide(a, b){
@@ -29,7 +32,8 @@ function divide(a, b){
         return;
     }
 
-    display.textContent = a / b;
+    finalValue = a / b;
+    display.textContent = finalValue;
 }
 
 function operate(){
@@ -67,6 +71,15 @@ function addDecimal(e){
 }
 
 function saveValue(e){
+    if(firstNum !== null){
+        operate();
+        operator = this.textContent;
+        firstNum = finalValue;
+        displayValue = '';
+
+        return;
+    }
+
     firstNum = displayValue;
     operator = this.textContent;
 
@@ -76,9 +89,10 @@ function saveValue(e){
 
 function allClear(){
     display.textContent = '0';
-    firstNum = 0;
+    firstNum = null;
     displayValue = '';
     operator = '';
+    finalValue = '';
 }
 
 function changeSign(){
@@ -94,8 +108,9 @@ const operatorButton = document.getElementsByClassName('operators');
 const clear = document.getElementById('clear');
 const negative = document.getElementById('negative');
 let displayValue = '';
-let firstNum = 0;
+let firstNum = null;
 let operator;
+let finalValue;
 
 for(i = 0; i < numberButton.length; i++){
     numberButton[i].addEventListener('click', addToDisplay);
